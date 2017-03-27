@@ -1,12 +1,12 @@
 'use strict'
 
 (function(module) {
-  const bioController = {};
+  const aboutController = {};
 
-  bioController.render = function() {
-    $('#map, #home').hide();
-    $('#bio').fadeIn();
+  aboutController.render = function() {
+    $('#search, #home').hide();
+    $('#about').fadeIn();
   }
   
-  module.bioController = bioController;
+  module.aboutController = aboutController;
 })(window);

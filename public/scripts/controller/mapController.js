@@ -4,8 +4,8 @@
   const mapController = {};
 
   mapController.render = function() {
-    $('#bio', '#home').hide();
-    $('#map').fadeIn();
+    $('#about', '#home').hide();
+    $('#search').fadeIn();
   }
 
   module.mapController = mapController;
