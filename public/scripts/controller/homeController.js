@@ -1,12 +1,12 @@
 'use strict'
 
 (function(module) {
-  const mapController = {};
+  const homeController = {};
 
-  mapController.render = function() {
-    $('#bio', '#map').hide();
+  homeController.render = function() {
+    $('#about', '#search').hide();
     $('#home').fadeIn();
   }
 
-  module.mapController = mapController;
+  module.homeController = homeController;
 })(window);
