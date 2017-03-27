@@ -1,0 +1,22 @@
+{
+  "name": "tweets-from-space",
+  "version": "1.0.0",
+  "description": "tweets from space",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mofo37/tweets-from-space.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mofo37/tweets-from-space/issues"
+  },
+  "homepage": "https://github.com/mofo37/tweets-from-space#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
