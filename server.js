@@ -21,11 +21,13 @@ app.get('/tweets', function (req, res) {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   });
 
-  var params = { screen_name: req.query.screen_name || 'nodejs' };
+  var params = { screen_name: req.query.screen_name || 'twts_frm_spce' };
   client.get('statuses/user_timeline', params, function (error, tweets) {
     if (!error) {
-      console.log(tweets);
+      console.log(req.query.screen_name);
       res.send(tweets);
+    } else {
+      res.send(error);
     }
   });
 });
