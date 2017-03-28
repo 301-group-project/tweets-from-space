@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
 (function(module) {
   const mapController = {};
 
   mapController.render = function() {
     $('#about', '#home').hide();
-    $('#search').fadeIn();
+    $('#form').fadeIn();
   }
 
   module.mapController = mapController;
