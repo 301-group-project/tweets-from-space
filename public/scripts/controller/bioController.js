@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 (function(module) {
-  const aboutController = {};
+  const bioController = {};
 
-  aboutController.render = function() {
-    $('#search, #home').hide();
+  bioController.render = function() {
+    $('#form', '#home').hide();
     $('#about').fadeIn();
   }
   
-  module.aboutController = aboutController;
+  module.bioController = bioController;
 })(window);

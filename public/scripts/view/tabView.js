@@ -1,5 +1,5 @@
 'use strict';
-var articleView = {}
+var articleView = {};
 
 articleView.handleMainNav = function() {
   console.log('tabview');

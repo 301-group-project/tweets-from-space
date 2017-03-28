@@ -9,6 +9,29 @@ h1{
     text-shadow: 10px 10px greenyellow;
 }
 
+ul li {
+    position:relative;
+    z-index: 10;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav {
+    position:relative;
+    z-index: 10;
+    color: white;
+}
+
+#about,
+#form {
+    position:relative;
+    z-index: 10;
+    color: white;
+}
+
+
+
 
 /*Taken from Nick Mkrtchyan's code pen
 http://www.facebook.com/sonick.pk
