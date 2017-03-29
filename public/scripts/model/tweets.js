@@ -33,7 +33,6 @@ tweets.requestTweets = function () {
 }
 tweets.requestTweets();
 
-
 // filters returned tweets by whether or not they have coordinates attached
 tweets.tweetsWitIt = function () {
   tweets.all.forEach(function (a) {
