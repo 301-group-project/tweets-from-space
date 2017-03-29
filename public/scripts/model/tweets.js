@@ -25,7 +25,6 @@ tweets.requestTweets = function () {
       result.map(function (ele) {
         tweets.all.push(ele);
       })
-      console.log(tweets.all);
       // calling a function to filter tweets by whether or not a location is defined and populating tweets.filteredTweets.
       tweets.tweetsWitIt();
     })
@@ -36,9 +35,7 @@ tweets.requestTweets();
 // filters returned tweets by whether or not they have coordinates attached
 tweets.tweetsWitIt = function () {
   tweets.all.forEach(function (a) {
-    console.log('first log');
     if (a.place === null) {
-      console.log('dumg');
     }
     else if (a.place.hasOwnProperty('bounding_box')) {
       // below is the list of desired properties of returned tweets, run through the TweetObject contructor and pushed into filteredTweets
