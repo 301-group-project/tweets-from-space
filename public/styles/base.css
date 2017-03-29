@@ -1,40 +1,14 @@
-h1{
+#title {
     color:#FFF;
-    z-index: 7;
-    position:absolute;
+    z-index: 10;
+    text-align: center;
+    position: relative;
     font-family: 'Bangers', cursive;
-    font-size: 100px;
+    font-size: 60px;
     letter-spacing: 10px;
     font-weight: lighter;
-    text-shadow: 10px 10px greenyellow;
+    text-shadow: 5px 5px greenyellow;
 }
-
-ul li {
-    position:relative;
-    z-index: 10;
-    color: white;
-    list-style: none;
-}
-
-ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav {
-    position:relative;
-    z-index: 10;
-    color: white;
-}
-
-#about,
-#form {
-    position:relative;
-    z-index: 10;
-    color: white;
-}
-
-
 
 
 /*Taken from Nick Mkrtchyan's code pen
