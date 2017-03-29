@@ -7,6 +7,15 @@ const tweets = {};
 tweets.all = [];
 tweets.filteredTweets = [];
 
+function TweetObject(name, content, location, photo, time, hashtags){
+  this.userName = name;
+  this.content = content;
+  this.location = location;
+  this.photo = photo;
+  this.time = time;
+  this.hashtags = hashtags;
+}
+
 tweets.requestTweets = function() {
   $.ajax('/tweets', {
     method: 'GET'
@@ -41,7 +50,14 @@ tweets.with = attr =>tweets.all.filter(tweet => tweet[attr]);
      } 
      else if (a.place.hasOwnProperty('bounding_box')) {
        console.log('heres one');
-       tweets.filteredTweets.push(a.place.bounding_box.coordinates[0][0]);
+       tweets.filteredTweets.push(a = new TweetObject(
+         a.user.name,
+         a.text,
+         a.place.bounding_box.coordinates[0][0],
+         a.user.profile_image_url,
+         a.created_at,
+         a.entities.hashtags
+       ));
      } 
    })
  }
