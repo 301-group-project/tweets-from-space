@@ -1,3 +1,4 @@
+// different types of tweets with different values to use as reference
 [
   {
     "created_at": "Wed Mar 29 17:17:08 +0000 2017",
@@ -82,8 +83,7 @@
     "favorited": false,
     "retweeted": false,
     "lang": "en"
-  }
-  {
+  }{
     "created_at": "Tue Mar 28 17:12:03 +0000 2017",
     "id": 846771883596906500,
     "id_str": "846771883596906496",
