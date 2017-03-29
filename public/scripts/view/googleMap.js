@@ -24,7 +24,6 @@ var myLatLng = [{lat: 45.523846, lng: -122.680855},
 var map;
 
 function initMap() {
-  console.log('google map running');
   var LatLng = new google.maps.LatLng(45.523846, -122.680855); 
   var myOptions = { 
     center: LatLng,
@@ -138,10 +137,8 @@ function initMap() {
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
-  
   myLatLng.forEach(function(element) {
     makeMarker(element);
-    console.log(element.lat);
   });
   function makeMarker (obj) {
     var marker = new google.maps.Marker({

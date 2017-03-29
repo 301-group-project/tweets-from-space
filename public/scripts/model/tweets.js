@@ -44,12 +44,9 @@ tweets.with = attr =>tweets.all.filter(tweet => tweet[attr]);
 
  tweets.tweetsWitIt = function() {
    tweets.all.forEach(function(a){
-     console.log('first log');
-      if (a.place === null){
-       console.log('dumg');
+    if (a.place === null){
      } 
      else if (a.place.hasOwnProperty('bounding_box')) {
-       console.log('heres one');
        tweets.filteredTweets.push(a = new TweetObject(
          a.user.name,
          a.text,
