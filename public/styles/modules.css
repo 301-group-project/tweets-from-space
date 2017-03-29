@@ -1,24 +1,61 @@
- /*Always set the map height explicitly to define the size of the div
-* element that contains the map. /*/
+
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+color: white;
+}
+
+.main-nav {
+  color: white;
+  z-index: 11;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+#bio div {
+  top: 200px;
+  left: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid white;
+  float: left; 
+  z-index: 12;
+  position: relative;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+form {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 12;
+}
+
 #form {
 height: 100%;
 width: 100%;
 }
+
 input {
-float: right;
+position: absolute;
+top: 25px;
+right: 25px;
+background-color: black;
+color: white;
 }
 
 #map {
 height: 100%;
 width: 100%;
-z-index: 100;
+z-index: 10;
+border: 3px solid white;
 }
 
-/*/ Optional: Makes the sample page fill the window. */
-html, body {
-height: 100%;
-margin: 0;
-padding: 0;
-}
 
 
