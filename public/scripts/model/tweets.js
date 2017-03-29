@@ -22,7 +22,6 @@ tweets.getTweets = function (screen) {
     method: 'GET'
   })
     .then((result) => {
-      tweets.filteredTweets = [];
       result.map(function (ele) {
         tweets.all.push(ele);
       })
