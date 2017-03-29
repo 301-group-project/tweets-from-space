@@ -1,8 +1,8 @@
 'use strict';
 
-// (function(module) {
+(function(module) {
 
-const tweets = {};
+let tweets = {};
 
 tweets.all = [];
 tweets.filteredTweets = [];
@@ -17,20 +17,21 @@ function TweetObject(name, content, location, photo, time, hashtags) {
   this.hashtags = hashtags;
 }
 
-tweets.requestTweets = function () {
-  $.ajax('/tweets', {
+tweets.getTweets = function (screen) {
+  $.ajax(`/map?search=${screen}`, {
     method: 'GET'
   })
     .then((result) => {
+      tweets.filteredTweets = [];
       result.map(function (ele) {
         tweets.all.push(ele);
       })
       // calling a function to filter tweets by whether or not a location is defined and populating tweets.filteredTweets.
       tweets.tweetsWitIt();
+      tweets.all = [];
     })
     .catch(console.error);
 }
-tweets.requestTweets();
 
 // filters returned tweets by whether or not they have coordinates attached
 tweets.tweetsWitIt = function () {
@@ -52,5 +53,5 @@ tweets.tweetsWitIt = function () {
 }
 
 
-// module.tweets = tweets;
-// })(window);
+module.tweets = tweets;
+})(window);
