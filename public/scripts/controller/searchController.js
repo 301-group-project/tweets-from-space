@@ -7,7 +7,7 @@
     $('#about', '#home').hide();
     $('#form').fadeIn();
     google.maps.event.trigger(map, 'resize');
-    $('#namename').hide();
+    $('#formInput').hide();
   }
 
   module.searchController = searchController;
