@@ -22,7 +22,8 @@ app.get('/map/:query',function(request, response) {
   });
 
   if(request.params.query.charAt(0) === '@') {
-    var params = { screen_name: request.params.query};
+    var params = { screen_name: request.params.query,
+    count: 100};
     client.get('statuses/user_timeline', params, function (error, tweets) {
       if (!error) {
         response.send(tweets);
@@ -32,7 +33,9 @@ app.get('/map/:query',function(request, response) {
     });
 
   } else if(request.params.query.charAt(0) === '%') {
-    var params = { q:request.params.query};
+    var params = { q:request.params.query,
+    count: 100
+};
     client.get('search/tweets', params, function(error, tweets) {
       if (!error) {
         response.send(tweets.statuses);
@@ -42,7 +45,8 @@ app.get('/map/:query',function(request, response) {
       }
     });
   } else {
-    var params = { q:request.params.query};
+    var params = { q:request.params.query,
+    count: 100};
     client.get('search/tweets', params, function(error, tweets) {
       if (!error) {
         response.send(tweets.statuses);
