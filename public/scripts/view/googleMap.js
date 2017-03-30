@@ -32,7 +32,7 @@
    
     var myOptions = { 
       center: {lat: 45.523846, lng: -122.680855},
-      zoom: 10,
+      zoom: 2,
       //this is how we do night view
       styles: [ 
   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
