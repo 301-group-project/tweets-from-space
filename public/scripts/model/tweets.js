@@ -17,6 +17,7 @@ function TweetObject(name, content, location, photo, time, hashtags) {
   this.hashtags = hashtags;
 }
 
+
 tweets.getTweets = function (inputValue) {
   if(inputValue.charAt(0) === '#') {
     inputValue = inputValue.replace('#', '%23');
@@ -26,10 +27,8 @@ tweets.getTweets = function (inputValue) {
     method: 'GET'
   })
     .then((result) => {
-      console.log('about to log: result');
       console.log(result);
-      console.log('just logged result');
-
+      tweets.filteredTweets = [];
 
       result.map(function (ele) {
         tweets.all.push(ele);
@@ -45,12 +44,9 @@ tweets.getTweets = function (inputValue) {
 // filters returned tweets by whether or not they have coordinates attached
 tweets.tweetsWitIt = function () {
   tweets.all.forEach(function (a) {
-    console.log('logging: a.place in tweetsWitIt');
-    console.log(a.place);
-
-    if (a.place !== null && a.place.hasOwnProperty('bounding_box')) {
-      console.log('in elseif');
+    if (a.place === null) {
       // below is the list of desired properties of returned tweets, run through the TweetObject contructor and pushed into filteredTweets
+    } else if (a.place.hasOwnProperty('bounding_box'))
       tweets.filteredTweets.push(a = new TweetObject(
         a.user.name,
         a.text,
@@ -59,8 +55,7 @@ tweets.tweetsWitIt = function () {
         a.created_at,
         a.entities.hashtags
       ));
-    }
-  })
+    })
 }
 
 

@@ -118,9 +118,7 @@
 
     map = new google.maps.Map(document.getElementById('map'), myOptions);
     var contentString = '<div id="content">' +
-
-        '<div id="siteNotice">' +
-        '</div>' +
+        '<div id="siteNotice">' + '</div>' +
         '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
         '<div id="bodyContent">' +
         '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
