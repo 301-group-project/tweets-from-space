@@ -5,7 +5,7 @@
 
   mapController.render = function() {
     $('#about', '#home').hide();
-    $('#form', '#map').fadeIn();
+    $('#form').fadeIn();
     google.maps.event.trigger(map, 'resize');
   }
 
