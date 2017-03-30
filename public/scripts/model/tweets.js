@@ -3,9 +3,9 @@
 (function(module) {
 
 let tweets = {};
-
-tweets.all = [];
 tweets.filteredTweets = [];
+tweets.all = [];
+
 
 // constructor for filteredTweets that adds objects of tweets with useful properties
 function TweetObject(name, content, location, photo, time, hashtags) {
@@ -18,6 +18,7 @@ function TweetObject(name, content, location, photo, time, hashtags) {
 }
 
 tweets.getTweets = function (screen) {
+  tweets.filteredTweets = [];
   $.ajax(`/map?search=${screen}`, {
     method: 'GET'
   })
@@ -28,6 +29,7 @@ tweets.getTweets = function (screen) {
       // calling a function to filter tweets by whether or not a location is defined and populating tweets.filteredTweets.
       tweets.tweetsWitIt();
       tweets.all = [];
+      mapTweets.initMap();
     })
     .catch(console.error);
 }
