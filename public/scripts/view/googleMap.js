@@ -1,10 +1,10 @@
 'use strict';
 (function(module) {
-
+  
   const mapTweets = {};
 
   // var myLatLng = [{lat: 45.523846, lng: -122.680855},
-  //     {lat: 45.523846, lng: -122.680855},
+  //     ,
   //     {lat: 46.523846, lng: -127.680855},
   //     {lat: 44.523846, lng: -142.680855},
   //     {lat: 46.523846, lng: -162.680855},
@@ -27,12 +27,12 @@
   var map;
 
   mapTweets.initMap = function () {
-    console.log(tweets.filteredTweets);
+    console.log(tweets.filteredTweets[0].location);
     
-    var LatLng = new google.maps.LatLng(45.523846, -122.680855); 
+   
     var myOptions = { 
-      center: LatLng,
-      zoom: 13,
+      center: {lat: 45.523846, lng: -122.680855},
+      zoom: 10,
       //this is how we do night view
       styles: [ 
   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -117,7 +117,6 @@
     };
 
     map = new google.maps.Map(document.getElementById('map'), myOptions);
-    
     var contentString = '<div id="content">' +
 
         '<div id="siteNotice">' +
@@ -143,12 +142,16 @@
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
-    myLatLng.forEach(function(element) {
+    tweets.filteredTweets.forEach(function(element) {
+      console.log(element);
       makeMarker(element);
     });
-    function makeMarker (obj) {
+    function makeMarker (tweet) {
+      console.log(tweets.filteredTweets[0].location[0]);
+      var lng = tweet.location[0];
+      var lat = tweet.location[1];
       var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(obj.lat, obj.lng),
+        position: new google.maps.LatLng({lat: lat, lng: lng}),
         title: 'Code Fellows PDX!'
       });
       marker.setMap(map);
