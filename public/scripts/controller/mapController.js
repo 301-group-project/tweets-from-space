@@ -5,10 +5,7 @@
 
   mapController.render = function() {
     $('#about', '#home').hide();
-    $('#form').fadeIn();
-    // callback=initMap
-    // console.log(tweets.filteredTweets)
-    //  mapTweets.initMap();  
+    $('#form', '#map').fadeIn();
     google.maps.event.trigger(map, 'resize');
   }
 
