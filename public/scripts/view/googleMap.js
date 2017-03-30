@@ -27,7 +27,7 @@
   var map;
 
   mapTweets.initMap = function () {
-    console.log(tweets.filteredTweets[0].location);
+    // console.log(tweets.filteredTweets[0].location);
     
    
     var myOptions = { 
