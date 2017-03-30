@@ -17,9 +17,12 @@ function TweetObject(name, content, location, photo, time, hashtags) {
   this.hashtags = hashtags;
 }
 
-tweets.getTweets = function (screen) {
+tweets.getTweets = function (inputValue) {
+  if(inputValue.charAt(0) === '#') {
+    inputValue = inputValue.replace('#', '%23');
+  }
   tweets.filteredTweets = [];
-  $.ajax(`/map?search=${screen}`, {
+  $.ajax(`/map/${inputValue}`, {
     method: 'GET'
   })
     .then((result) => {
