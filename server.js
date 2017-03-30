@@ -20,15 +20,26 @@ app.get('/map*',function(request, response) {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   });
 
-  var params = { screen_name: request.query.screen_name|| request.url.slice(12) };
-  client.get('statuses/user_timeline', params, function (error, tweets) {
+  // var params = { screen_name: request.query.screen_name || request.url.slice(12) };
+  // client.get('statuses/user_timeline', params, function (error, tweets) {
+  //   if (!error) {
+  //     console.log(params.screen_name);
+  //     response.send(tweets);
+  //   } else {
+  //     response.send(error);
+  //   }
+  // });
+
+  var params = { q: request.query.q || request.url.slice(12) };
+  client.get('search/tweets', params, function(error, tweets) {
     if (!error) {
-      console.log(params.screen_name);
-      response.send(tweets);
+      console.log(tweets.statuses);
+      response.send(tweets.statuses);
     } else {
       response.send(error);
     }
   });
+  
 });
 
 app.listen(PORT, function () {
