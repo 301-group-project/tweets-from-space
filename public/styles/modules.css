@@ -12,6 +12,7 @@ color: white;
   position: absolute;
   top: 25px;
   left: 25px;
+  float: right;
 }
 
 #bio div {
@@ -25,9 +26,9 @@ color: white;
   position: relative;
 }
 
-ul li a {
-  text-decoration: none;
+.tab a {
   color: white;
+  text-decoration: none;
 }
 
 form {
