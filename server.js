@@ -21,6 +21,7 @@ app.get('/map/:query',function(request, response) {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   });
 
+// requests based on username searches
   if(request.params.query.charAt(0) === '@') {
     var params = { screen_name: request.params.query,
     count: 100};
@@ -32,6 +33,7 @@ app.get('/map/:query',function(request, response) {
       }
     });
 
+// requests based on hashtag searches
   } else if(request.params.query.charAt(0) === '%') {
     var params = { q:request.params.query,
     count: 100
@@ -44,7 +46,10 @@ app.get('/map/:query',function(request, response) {
         response.send(error);
       }
     });
-  } else {
+  } 
+
+// requests from undefined searches (without @ or #)
+  else {
     var params = { q:request.params.query,
     count: 100};
     client.get('search/tweets', params, function(error, tweets) {
