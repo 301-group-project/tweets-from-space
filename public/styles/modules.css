@@ -3,11 +3,11 @@ html, body {
 height: 100%;
 margin: 0;
 padding: 0;
-color: white;
+color:rgb(231, 222, 227);
 }
 
 .main-nav {
-  color: white;
+  color:rgb(231, 222, 227);
   z-index: 11;
   position: absolute;
   top: 25px;
@@ -27,7 +27,7 @@ color: white;
 }
 
 #title {
-    color:rgb(251, 239, 244);
+    color:rgb(231, 222, 227);
     z-index: 10;
     text-align: center;
     position: relative;
@@ -35,7 +35,7 @@ color: white;
     font-size: 60px;
     letter-spacing: 10px;
     font-weight: lighter;
-    text-shadow: 5px 5px darkslategray;
+    text-shadow: 5px 5px rgb(76, 127, 131);
     width: 100%; 
     height: 100vh;
     margin: 0px;
@@ -51,7 +51,7 @@ color: white;
 }
 
 .icon-menu{
-   color:rgb(251, 239, 244);  
+   color:rgb(231, 222, 227);  
    font-size: 40px;
    font-weight: lighter;
    margin-bottom: 10px;
@@ -76,7 +76,7 @@ color: white;
 }
 
 .tab a {
- color:rgb(251, 239, 244); 
+color:rgb(231, 222, 227);
  letter-spacing: 3px;
  text-decoration: none;
  margin-top: 10px;
@@ -118,5 +118,11 @@ z-index: 10;
 
 
 #content {
-  color: lightgreen;
+  /*color: lightgreen;*/
+  color:darkslategrey;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#profileImage {
+  /*float: right;*/
 }

@@ -117,12 +117,12 @@
       marker.setMap(map);
       var contentString = 
         '<div id="content">' +
-          `<h1 id="firstHeading" class="firstHeading"> ${tweet.userName}</h1>` +
+          `<h1 id="firstHeading" class="firstHeading"> ${tweet.userName}</h1> <img id="profileImage" src="${tweet.photo}">` +
           '<div id="bodyContent">' +
             `<p>${tweet.userName}</p>` +
             `<p>${tweet.content}</p>` +
-            `<p>Location: ${tweet.location}, <img src="${tweet.photo}">` +
-            `<p>${tweet.time}, ${tweet.hashtags}</p>` +
+            `<p>Location: ${tweet.location},` +
+            `<p>${tweet.time}</p>` +
           '</div>' +
         '</div>';
          var infowindow = new google.maps.InfoWindow({
