@@ -17,7 +17,7 @@ function TweetObject(name, content, location, photo, time, hashtags) {
   this.hashtags = hashtags;
 }
 
-
+// request to nab tweets from twitter api via server request
 tweets.getTweets = function (inputValue) {
   if(inputValue.charAt(0) === '#') {
     inputValue = inputValue.replace('#', '%23');

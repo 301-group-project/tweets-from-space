@@ -102,6 +102,8 @@
       console.log(element);
       makeMarker(element);
     });
+
+    // adds tweets to map as markers
     function makeMarker (tweet) {
       console.log(tweets.filteredTweets[0].location[0]);
       var lng = tweet.location[0];
@@ -110,6 +112,8 @@
         position: new google.maps.LatLng({lat: lat, lng: lng}),
         title: 'Code Fellows PDX!'
       });
+
+      // populates specific tweets' markers with their stored information
       marker.setMap(map);
       var contentString = 
         '<div id="content">' +
