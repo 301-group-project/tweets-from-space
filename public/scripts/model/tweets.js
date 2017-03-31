@@ -48,13 +48,19 @@ tweets.tweetsWitIt = function () {
       tweets.filteredTweets.push(a = new TweetObject(
         a.user.name,
         a.text,
-        a.place.bounding_box.coordinates[0][0],
+        tweets.centerFinder(a.place.bounding_box.coordinates),
         a.user.profile_image_url,
         a.created_at,
         a.entities.hashtags
       ));
     }
   });
+}
+
+// returns the exact center of the location bounding_box
+tweets.centerFinder = function(corners) {
+  return [(corners[0][0][0] + corners[0][2][0]) / 2,
+  (corners[0][0][1] + corners[0][2][1]) / 2]
 }
 
 
