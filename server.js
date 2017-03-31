@@ -32,7 +32,7 @@ app.get('/map/:query',function(request, response) {
       }
     });
 
-  // requests from undefined searches (without @ or #)
+  // requests from undefined searches (with or without @)
   } else {
     var params = {q:request.params.query, count: 100};
     client.get('search/tweets', params, function(error, tweets) {
