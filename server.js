@@ -25,6 +25,9 @@ app.get('/map/:query',function(request, response) {
   if(request.params.query.charAt(0) === '@') {
     var params = {screen_name: request.params.query, count: 100};
     client.get('statuses/user_timeline', params, function (error, tweets) {
+      // this is a really common place to use a one line if statement with a
+      // return in lieu of an if/else. So:
+      // if (error) return response.send(error)
       if (!error) {
         response.send(tweets);
       } else {

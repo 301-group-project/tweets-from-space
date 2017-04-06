@@ -1,19 +1,19 @@
 'use strict';
 (function(module) {
-  
+
   const mapTweets = {};
 
   var map;
 
   mapTweets.initMap = function () {
     // console.log(tweets.filteredTweets[0].location);
-    
-   
-    var myOptions = { 
+
+
+    var myOptions = {
       center: {lat: 23.1136, lng: -82.3666},
       zoom: 3,
       //this is how we do night view
-      styles: [ 
+      styles: [
   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
   {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
   {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
@@ -97,7 +97,7 @@
 
     map = new google.maps.Map(document.getElementById('map'), myOptions);
 
-   
+
     tweets.filteredTweets.forEach(function(element) {
       console.log(element);
       makeMarker(element);
@@ -115,7 +115,12 @@
 
       // populates specific tweets' markers with their stored information
       marker.setMap(map);
-      var contentString = 
+      // if you're building out a string this complex it's probably a good point
+      // to bring in some form of templating like handlebars. Though that may
+      // be heavy handed if you're not using it anywhere else. Generally
+      // speaking you want to try and avoid formatting complex HTML structures
+      // in a string like this.
+      var contentString =
         '<div id="content">' +
           `<h1 id="firstHeading" class="firstHeading"> ${tweet.userName}</h1> <img id="profileImage" src="${tweet.photo}">` +
           '<div id="bodyContent">' +
@@ -134,7 +139,7 @@
     }
   }
 
-  module.mapTweets = mapTweets; 
+  module.mapTweets = mapTweets;
 })(window);
 
 

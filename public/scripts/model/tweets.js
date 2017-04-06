@@ -8,6 +8,7 @@ tweets.all = [];
 
 
 // constructor for filteredTweets that adds objects of tweets with useful properties
+// this many arguments would be better handled by passing in an object
 function TweetObject(name, content, location, photo, time, hashtags) {
   this.userName = name;
   this.content = content;
@@ -27,6 +28,7 @@ tweets.getTweets = function (inputValue) {
     method: 'GET'
   })
     .then((result) => {
+      // try to keep console.logs used for development like this out of production code.
       console.log(result);
       tweets.filteredTweets = [];
 
@@ -59,6 +61,9 @@ tweets.tweetsWitIt = function () {
 
 // returns the exact center of the location bounding_box
 tweets.centerFinder = function(corners) {
+  // it's cool that you got this all onto one line, but it lends itself
+  // to difficult to read code. Breaking it out into variables that describe
+  // what's going on or adding some comments could help immensely.
   return [(corners[0][0][0] + corners[0][2][0]) / 2,
   (corners[0][0][1] + corners[0][2][1]) / 2]
 }
