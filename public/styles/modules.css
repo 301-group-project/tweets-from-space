@@ -1,4 +1,5 @@
-
+/* There's a little too much absolute positioning in general. It's likely that
+   given your current structure it may be the only way to handle it. It would take a bit more planning in terms of both how your page is structured. The tricky part about relying on absolute like this is twofold. It tends to be brittle in terms of responsiveness (ie it breaks in weird ways at difference sizes) and it means that whatever you add in from here on out is going to have to be positioned absolutely.*/
 html, body {
 height: 100%;
 margin: 0;
@@ -12,6 +13,7 @@ color:rgb(231, 222, 227);
   position: absolute;
   top: 25px;
   left: 25px;
+  /* Float isn't doing anything if it's positioned absolute*/
   float: right;
 }
 
@@ -21,7 +23,7 @@ color:rgb(231, 222, 227);
   margin: 10px;
   padding: 10px;
   border: 2px solid white;
-  float: left; 
+  float: left;
   z-index: 12;
   position: relative;
 }
@@ -36,7 +38,7 @@ color:rgb(231, 222, 227);
     letter-spacing: 10px;
     font-weight: lighter;
     text-shadow: 5px 5px rgb(76, 127, 131);
-    width: 100%; 
+    width: 100%;
     height: 100vh;
     margin: 0px;
     display: inline-block;
@@ -51,7 +53,7 @@ color:rgb(231, 222, 227);
 }
 
 .icon-menu{
-   color:rgb(231, 222, 227);  
+   color:rgb(231, 222, 227);
    font-size: 40px;
    font-weight: lighter;
    margin-bottom: 10px;
@@ -108,6 +110,7 @@ z-index: 10;
 }
 
 #earth {
+  /* Margins don't really matter to absolutely positioned elements */
   margin-top: 100px;
   z-index: 1;
   left: 50%;
